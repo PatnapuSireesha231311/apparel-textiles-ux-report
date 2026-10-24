@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Thread & Loom — thoughtfully chosen apparel and textiles for everyday living.">
+  <title>Thread & Loom | Apparel & Textiles</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Complimentary shipping on orders over ₹1,999</div>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="Thread and Loom home">THREAD<span>&</span>LOOM</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+      <a href="#new-arrivals">New In</a>
+      <a href="#clothing">Clothing</a>
+      <a href="#textiles">Textiles</a>
+      <a href="#story">Our Story</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchToggle" aria-label="Show search">⌕ <span class="desktop-label">Search</span></button>
+      <button class="icon-button" id="cartToggle" aria-label="Open shopping bag">Bag (<span id="cartCount">0</span>)</button>
+    </div>
+  </header>
+
+  <div class="search-panel hidden" id="searchPanel">
+    <label for="searchInput">Search products</label>
+    <input id="searchInput" type="search" placeholder="Try linen, shirt, scarf…">
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">MADE TO BE LIVED IN</p>
+        <h1>Everyday pieces.<br><em>Thoughtfully made.</em></h1>
+        <p>Discover easy layers, natural textures and textiles designed to feel at home in your life.</p>
+        <a class="button button-dark" href="#new-arrivals">Explore the collection <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="hero-art" role="img" aria-label="Abstract warm-toned textile-inspired shapes">
+        <div class="sun"></div><div class="fabric fabric-one"></div><div class="fabric fabric-two"></div>
+        <span class="hero-note">Natural textures<br>for modern living</span>
+      </div>
+    </section>
+
+    <section class="section category-section" aria-labelledby="categoryTitle">
+      <div class="section-heading">
+        <div><p class="eyebrow">FIND YOUR FAVOURITE</p><h2 id="categoryTitle">Shop by category</h2></div>
+      </div>
+      <div class="category-grid">
+        <a class="category-card category-clothing" href="#clothing"><span>01 / CLOTHING</span><strong>Easy essentials</strong><span class="category-arrow">↗</span></a>
+        <a class="category-card category-textiles" href="#textiles"><span>02 / TEXTILES</span><strong>Texture & home</strong><span class="category-arrow">↗</span></a>
+        <a class="category-card category-accessories" href="#new-arrivals"><span>03 / ACCESSORIES</span><strong>Finishing touches</strong><span class="category-arrow">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section products-section" id="new-arrivals" aria-labelledby="productsTitle">
+      <div class="section-heading products-heading">
+        <div><p class="eyebrow">THE LATEST EDIT</p><h2 id="productsTitle">Considered favourites</h2></div>
+        <p>Versatile pieces, natural colours, made for repeat wear.</p>
+      </div>
+      <div class="shop-controls">
+        <label class="search-inline" for="searchInput2">Search <input id="searchInput2" type="search" placeholder="Search this collection"></label>
+        <label for="categoryFilter">Category
+          <select id="categoryFilter">
+            <option value="all">All products</option>
+            <option value="clothing">Clothing</option>
+            <option value="textiles">Textiles</option>
+            <option value="accessories">Accessories</option>
+          </select>
+        </label>
+        <label for="sortSelect">Sort by
+          <select id="sortSelect">
+            <option value="featured">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </label>
+      </div>
+      <p class="results-count" id="resultsCount" aria-live="polite"></p>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state hidden" id="emptyState">No products match your search. Try another term or category.</p>
+    </section>
+
+    <section class="story-section" id="story">
+      <div class="story-art" role="img" aria-label="Abstract illustration inspired by woven fabric"></div>
+      <div class="story-copy">
+        <p class="eyebrow">OUR POINT OF VIEW</p>
+        <h2>Good design starts with how things feel.</h2>
+        <p>We believe the pieces we live with should be useful, comfortable and quietly beautiful. Thread & Loom is a concept storefront celebrating tactile materials, timeless shapes and thoughtful details.</p>
+        <a href="#textiles" class="text-link">Explore textiles <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="newsletter section">
+      <p class="eyebrow">NOTES FROM THREAD & LOOM</p>
+      <h2>A little inspiration, occasionally.</h2>
+      <p>New arrivals, care tips and stories about the materials we love.</p>
+      <form id="newsletterForm" class="newsletter-form">
+        <label class="visually-hidden" for="emailInput">Email address</label>
+        <input type="email" id="emailInput" placeholder="Your email address" required>
+        <button class="button button-dark" type="submit">Sign me up →</button>
+      </form>
+      <p id="newsletterMessage" class="form-message" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo footer-logo" href="#">THREAD<span>&</span>LOOM</a>
+    <p>Thoughtful apparel and textiles for everyday living.</p>
+    <div class="footer-links"><a href="#new-arrivals">Shop</a><a href="#story">Our story</a><a href="mailto:hello@example.com">Contact</a></div>
+    <small>© <span id="year"></span> Thread & Loom. Concept project for educational use.</small>
+  </footer>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer-heading"><h2 id="cartTitle">Your bag <span id="drawerCount">(0)</span></h2><button class="close-button" id="cartClose" aria-label="Close shopping bag">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="subtotal"><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+      <p>Shipping and taxes calculated at checkout.</p>
+      <button class="button button-dark checkout-button" id="checkoutButton">Continue to checkout</button>
+      <p id="checkoutMessage" class="form-message" aria-live="polite"></p>
+    </div>
+  </aside>
+</body>
+</html>
